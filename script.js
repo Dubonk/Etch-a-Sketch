@@ -1,24 +1,61 @@
 const container = document.querySelector('#container');
+const large = document.querySelector('#large');
+const largest = document.querySelector('#largest');
 const sixteen = document.querySelector('#sixteen');
 const eight = document.querySelector('#eight');
 const small = document.querySelector('#small');
 const reset = document.querySelector('#reset');
 const cells = document.createElement('div');
+let isDrawing = false;
 
-    
+
+window.addEventListener("mousedown", () => {
+    isDrawing = true;
+});
+window.addEventListener("mouseup", () => {
+    isDrawing = false;
+})
+
+
 function baseCells(num) {
-    deleteCells();
+    if(num == 4096) {
+        deleteCells();
+    for(let i = 1; i <= num; i++) {
+        const cells = document.createElement('div');
+        cells.classList.add('cells');
+        cells.style.width = '15px';
+        cells.style.height = '15px';
+        container.append(cells);
+        cells.addEventListener('mouseover', () => { 
+            if(isDrawing){cells.style.background = "#000000";}
+        })}  
+    }
+    
+    if(num == 1024) {
+        deleteCells();
+    for(let i = 1; i <= num; i++) {
+        const cells = document.createElement('div');
+        cells.classList.add('cells');
+        cells.style.width = '30px';
+        cells.style.height = '30px';
+        container.append(cells);
+        cells.addEventListener('mouseover', () => { 
+            if(isDrawing){cells.style.background = "#a2c4c9";}
+        })}  
+    }
+    
+   
     if(num == 256) {
-
+        deleteCells();
     for(let i = 1; i <= num; i++) {
         const cells = document.createElement('div');
         cells.classList.add('cells');
         container.append(cells);
-        cells.addEventListener('mouseover', () => {
-        cells.style.backgroundColor = "#e27d60";
-        })
-} 
-}
+        cells.addEventListener('mouseover', () => { 
+            if(isDrawing){cells.style.background = "#16537E";}
+        })}  
+    }
+
     else if(num == 64) {
         deleteCells();
     for(let i = 1; i <= num; i++) {
@@ -28,10 +65,7 @@ function baseCells(num) {
         cells.style.height = '120px';
         container.append(cells);
         cells.addEventListener('mouseover', () => {
-        cells.style.backgroundColor = "#D9AFD9";
-        //cells.style.backgroundImage = 'linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%)';
-
-    })
+        if(isDrawing){cells.style.backgroundColor = "#D9AFD9" }});
 }
 }
 else if(num == 16) {
@@ -43,12 +77,11 @@ else if(num == 16) {
         cells.style.height = '240px';
         container.append(cells);
         cells.addEventListener('mouseover', () => {
-        cells.style.backgroundColor = "#41b3a3";
+        if(isDrawing){cells.style.backgroundColor = "#41b3a3";}
     })
-}
+}}
 }
 
-}
 small.addEventListener('click', () => {
     baseCells(16);
 })
@@ -57,6 +90,12 @@ eight.addEventListener('click', () => {
 })
 sixteen.addEventListener('click', () => {
     baseCells(256);
+})
+large.addEventListener('click', () => {
+    baseCells(1024);
+})
+largest.addEventListener('click', () => {
+    baseCells(4096);
 })
 reset.addEventListener('click', () => {
     deleteCells('cells');
@@ -70,3 +109,6 @@ function deleteCells() {
     elements[0].parentNode.removeChild(elements[0]);
    }
 }
+
+
+//
