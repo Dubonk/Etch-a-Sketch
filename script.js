@@ -40,7 +40,7 @@ function baseCells(num) {
         cells.style.height = '30px';
         container.append(cells);
         cells.addEventListener('mouseover', () => { 
-            if(isDrawing){cells.style.background = "#a2c4c9";}
+            if(isDrawing){cells.style.background = "#000000";}
         })}  
     }
     
@@ -52,7 +52,7 @@ function baseCells(num) {
         cells.classList.add('cells');
         container.append(cells);
         cells.addEventListener('mouseover', () => { 
-            if(isDrawing){cells.style.background = "#16537E";}
+            if(isDrawing){cells.style.background = "#000000";}
         })}  
     }
 
@@ -65,7 +65,7 @@ function baseCells(num) {
         cells.style.height = '120px';
         container.append(cells);
         cells.addEventListener('mouseover', () => {
-        if(isDrawing){cells.style.backgroundColor = "#D9AFD9" }});
+        if(isDrawing){cells.style.backgroundColor = "#000000" }});
 }
 }
 else if(num == 16) {
@@ -77,7 +77,7 @@ else if(num == 16) {
         cells.style.height = '240px';
         container.append(cells);
         cells.addEventListener('mouseover', () => {
-        if(isDrawing){cells.style.backgroundColor = "#41b3a3";}
+        if(isDrawing){cells.style.backgroundColor = "#000000";}
     })
 }}
 }
