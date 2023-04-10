@@ -5,6 +5,7 @@ const sixteen = document.querySelector('#sixteen');
 const eight = document.querySelector('#eight');
 const small = document.querySelector('#small');
 const reset = document.querySelector('#reset');
+const tracks = document.querySelector('#tracks');
 const cells = document.createElement('div');
 let isDrawing = false;
 
@@ -21,6 +22,8 @@ function baseCells(num) {
     if(num == 4096) {
         deleteCells();
     for(let i = 1; i <= num; i++) {
+        tracks.addEventListener('click', () => {
+        cells.classList.toggle('outlineClicked');})
         const cells = document.createElement('div');
         cells.classList.add('cells');
         cells.style.width = '15px';
@@ -34,6 +37,8 @@ function baseCells(num) {
     if(num == 1024) {
         deleteCells();
     for(let i = 1; i <= num; i++) {
+        tracks.addEventListener('click', () => {
+        cells.classList.toggle('outlineClicked');})
         const cells = document.createElement('div');
         cells.classList.add('cells');
         cells.style.width = '30px';
@@ -48,6 +53,8 @@ function baseCells(num) {
     if(num == 256) {
         deleteCells();
     for(let i = 1; i <= num; i++) {
+        tracks.addEventListener('click', () => {
+        cells.classList.toggle('outlineClicked');})
         const cells = document.createElement('div');
         cells.classList.add('cells');
         container.append(cells);
@@ -59,6 +66,8 @@ function baseCells(num) {
     else if(num == 64) {
         deleteCells();
     for(let i = 1; i <= num; i++) {
+        tracks.addEventListener('click', () => {
+        cells.classList.toggle('outlineClicked');})
         const cells = document.createElement('div');
         cells.classList.add('cells');
         cells.style.width = '120px';
@@ -71,6 +80,8 @@ function baseCells(num) {
 else if(num == 16) {
     deleteCells();
     for(let i = 1; i <= num; i++) {
+        tracks.addEventListener('click', () => {
+        cells.classList.toggle('outlineClicked');})
         const cells = document.createElement('div');
         cells.classList.add('cells');
         cells.style.width = '240px';
@@ -103,12 +114,11 @@ reset.addEventListener('click', () => {
 })
 
 
+
+
 function deleteCells() {
     const elements = document.getElementsByClassName('cells');
    while(elements.length > 0) {
     elements[0].parentNode.removeChild(elements[0]);
    }
 }
-
-
-//
