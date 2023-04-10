@@ -29,7 +29,7 @@ function baseCells(num) {
         cells.style.width = '15px';
         cells.style.height = '15px';
         container.append(cells);
-        cells.addEventListener('mouseover', () => { 
+        cells.addEventListener('mousemove', () => { 
             if(isDrawing){cells.style.background = "#000000";}
         })}  
     }
@@ -44,7 +44,7 @@ function baseCells(num) {
         cells.style.width = '30px';
         cells.style.height = '30px';
         container.append(cells);
-        cells.addEventListener('mouseover', () => { 
+        cells.addEventListener('mousemove', () => { 
             if(isDrawing){cells.style.background = "#000000";}
         })}  
     }
@@ -58,7 +58,7 @@ function baseCells(num) {
         const cells = document.createElement('div');
         cells.classList.add('cells');
         container.append(cells);
-        cells.addEventListener('mouseover', () => { 
+        cells.addEventListener('mousemove', () => { 
             if(isDrawing){cells.style.background = "#000000";}
         })}  
     }
@@ -73,7 +73,7 @@ function baseCells(num) {
         cells.style.width = '120px';
         cells.style.height = '120px';
         container.append(cells);
-        cells.addEventListener('mouseover', () => {
+        cells.addEventListener('mousemove', () => {
         if(isDrawing){cells.style.backgroundColor = "#000000" }});
 }
 }
@@ -87,7 +87,7 @@ else if(num == 16) {
         cells.style.width = '240px';
         cells.style.height = '240px';
         container.append(cells);
-        cells.addEventListener('mouseover', () => {
+        cells.addEventListener('mousemove', () => {
         if(isDrawing){cells.style.backgroundColor = "#000000";}
     })
 }}
