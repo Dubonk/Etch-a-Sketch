@@ -88,16 +88,16 @@ button {
 }
 
 button:focus {
-  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  box-shadow: #3ce0dd 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #2ea4a2 0 -3px 0 inset;
 }
 
 button:hover {
-  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #36a89b 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 
 button:active {
-  box-shadow: #3c4fe0 0 3px 7px inset;
+  box-shadow: #3cd8e0 0 3px 7px inset;
   transform: translateY(2px);
 }
 .outlineClicked {
@@ -119,5 +119,3 @@ a {
   color: #d8d8d8;
   text-decoration: none;
 }
-
-//#5adaff
