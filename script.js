@@ -22,27 +22,29 @@ window.addEventListener("mouseup", () => {
 function baseCells(num) {
     if(num == 4096) {
         deleteCells();
-    for(let i = 1; i <= num; i++) {
-        tracks.addEventListener('click', () => {
-        cells.classList.toggle('outlineClicked');})
-        const cells = document.createElement('div');
-        cells.classList.add('cells');
-        cells.style.width = '13px';
-        cells.style.height = '13px';
-        container.append(cells);
-        cells.addEventListener('mousemove', () => { 
-            if(isDrawing && erase.classList.contains('clicked')){cells.style.background = "#d8d8d8";}
-            else if (isDrawing) {
+        for(let i = 1; i <= num; i++) {
+            tracks.addEventListener('click', () => {
+                cells.classList.toggle('outlineClicked');
+            })
+            const cells = document.createElement('div');
+            cells.classList.add('cells');
+            cells.style.width = '13px';
+            cells.style.height = '13px';
+            container.append(cells);
+            cells.addEventListener('mousemove', () => { 
+                if(isDrawing && erase.classList.contains('clicked')){cells.style.background = "#d8d8d8";}
+                else if (isDrawing) {
                 cells.style.background = "black";
-            }
-        })   }  
+                    }
+                })   }  
     }
     
     if(num == 1024) {
         deleteCells();
     for(let i = 1; i <= num; i++) {
         tracks.addEventListener('click', () => {
-        cells.classList.toggle('outlineClicked');})
+            cells.classList.toggle('outlineClicked');
+        })
         const cells = document.createElement('div');
         cells.classList.add('cells');
         cells.style.width = '28px';
@@ -60,8 +62,9 @@ function baseCells(num) {
     if(num == 256) {
         deleteCells();
     for(let i = 1; i <= num; i++) {
-        tracks.addEventListener('click', () => {
-        cells.classList.toggle('outlineClicked');})
+        tracks.addEventListener('click', () => {   
+            cells.classList.toggle('outlineClicked');
+        })
         const cells = document.createElement('div');
         cells.classList.add('cells');
         container.append(cells);
@@ -78,7 +81,8 @@ function baseCells(num) {
         deleteCells();
     for(let i = 1; i <= num; i++) {
         tracks.addEventListener('click', () => {
-        cells.classList.toggle('outlineClicked');})
+            cells.classList.toggle('outlineClicked');
+            });
         const cells = document.createElement('div');
         cells.classList.add('cells');
         cells.style.width = '118px';
@@ -96,7 +100,8 @@ else if(num == 16) {
     deleteCells();
     for(let i = 1; i <= num; i++) {
         tracks.addEventListener('click', () => {
-        cells.classList.toggle('outlineClicked');})
+            cells.classList.toggle('outlineClicked');
+            })
         const cells = document.createElement('div');
         cells.classList.add('cells');
         cells.style.width = '238px';
@@ -114,28 +119,64 @@ else if(num == 16) {
 }
 
 small.addEventListener('click', () => {
+    eight.classList.remove('clicked');
+    sixteen.classList.remove('clicked');
+    large.classList.remove('clicked');
+    largest.classList.remove('clicked');
+    small.classList.add('clicked');
     deleteCells();
     baseCells(16);
+    
 });
 eight.addEventListener('click', () => {
+    eight.classList.add('clicked');
+    sixteen.classList.remove('clicked');
+    large.classList.remove('clicked');
+    largest.classList.remove('clicked');
+    small.classList.remove('clicked');
     deleteCells();
     baseCells(64);
+    
 });
 sixteen.addEventListener('click', () => {
+    eight.classList.remove('clicked');
+    sixteen.classList.add('clicked');
+    large.classList.remove('clicked');
+    largest.classList.remove('clicked');
+    small.classList.remove('clicked');
     deleteCells();
     baseCells(256);
+    
 });
 large.addEventListener('click', () => {
+    eight.classList.remove('clicked');
+    sixteen.classList.remove('clicked');
+    large.classList.add('clicked');
+    largest.classList.remove('clicked');
+    small.classList.remove('clicked');
     deleteCells();
     baseCells(1024);
+    
 });
 largest.addEventListener('click', () => {
+    eight.classList.remove('clicked');
+    sixteen.classList.remove('clicked');
+    large.classList.remove('clicked');
+    largest.classList.add('clicked');
+    small.classList.remove('clicked');
     deleteCells();
     baseCells(4096);
+    
 });
 reset.addEventListener('click', () => {
+    eight.classList.add('clicked');
+    sixteen.classList.remove('clicked');
+    large.classList.remove('clicked');
+    largest.classList.remove('clicked');
+    small.classList.remove('clicked');
     deleteCells();
-    baseCells(256);
+    baseCells(64);
+    
 });
 erase.addEventListener('click', () => {
     erase.classList.toggle('clicked');
@@ -148,4 +189,6 @@ function deleteCells() {
    }
 };
 
-baseCells(256);
+baseCells(64);
+eight.classList.add('clicked');
+
