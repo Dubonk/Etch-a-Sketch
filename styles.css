@@ -40,10 +40,10 @@ body {
 }
 
 .cells {
-    height: 60px;
-    width: 60px;
+    height: 58px;
+    width: 58px;
     user-select: none;
-    outline: 1px solid rgb(206, 204,204);
+    border: 1px solid rgb(135, 135, 135);
 }
 
 .filled {
@@ -101,7 +101,7 @@ button:active {
   transform: translateY(2px);
 }
 .outlineClicked {
- outline: none;
+ border: transparent 1px solid;
 }
 
 #footer {
@@ -118,4 +118,8 @@ button:active {
 a {
   color: #d8d8d8;
   text-decoration: none;
+}
+
+.clicked {
+  color: rgb(13, 229, 13);
 }
