@@ -35,11 +35,13 @@ function baseCells(num) {
                         cells.style.background = "#d8d8d8";
                     }
                 else if (isDrawing) {
+                    cells.style.background = 'black';
                     cells.classList.add('colored');
                     }
                 reset.addEventListener('click', () => {
                         cells.classList.remove('colored');
                         cells.classList.add('fade');
+                        cells.style.background = '#d8d8d8';
                     });
                 })}  
     }
@@ -60,11 +62,13 @@ function baseCells(num) {
                     cells.style.background = "#d8d8d8";
                 }
             else if (isDrawing) {
+                cells.style.background = 'black';
                 cells.classList.add('colored');
                 }
             reset.addEventListener('click', () => {
                 cells.classList.remove('colored');
                 cells.classList.add('fade');
+                cells.style.background = '#d8d8d8';
                 });
             })}  
     }
@@ -85,12 +89,14 @@ function baseCells(num) {
                     cells.style.background = "#d8d8d8";
                         }
                 else if (isDrawing) {
+                    cells.style.background = 'black';
                     cells.classList.add('colored');
                 }
                 }
                 reset.addEventListener('click', () => {
                     cells.classList.remove('colored');
                     cells.classList.add('fade');
+                    cells.style.background = '#d8d8d8';
                 });
         })}  
     }
@@ -111,11 +117,13 @@ function baseCells(num) {
                     cells.style.background = "#d8d8d8";
                 }
             else if (isDrawing) {
+                cells.style.background = 'black';
                 cells.classList.add('colored');
                 }
             reset.addEventListener('click', () => {
                 cells.classList.remove('colored');
                 cells.classList.add('fade');
+                cells.style.background = '#d8d8d8';
             });
     });
 }
@@ -136,12 +144,14 @@ else if(num == 16) {
                     cells.style.background = "#d8d8d8";
                 }
             else if (isDrawing) {
+                cells.style.background = 'black';
                 cells.classList.add('colored');
             }
             
             reset.addEventListener('click', () => {
                 cells.classList.remove('colored');
                 cells.classList.add('fade');
+                cells.style.background = '#d8d8d8';
             })
     })
 }}
