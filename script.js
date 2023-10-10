@@ -210,11 +210,11 @@ largest.addEventListener('click', () => {
     
 });
 reset.addEventListener('click', () => {
-    eight.classList.add('clicked');
-    sixteen.classList.remove('clicked');
-    large.classList.remove('clicked');
-    largest.classList.remove('clicked');
-    small.classList.remove('clicked');
+    // eight.classList.add('clicked');
+    // sixteen.classList.remove('clicked');
+    // large.classList.remove('clicked');
+    // largest.classList.remove('clicked');
+    // small.classList.remove('clicked');
     tracks.classList.add('clicked');
     container.classList.add('shake');
     setTimeout(function() {
@@ -222,7 +222,7 @@ reset.addEventListener('click', () => {
     }, 1000);
     setTimeout(function() {
         deleteCells() 
-        baseCells(64)
+        baseCells(num)
     }, 1000);
 });
 erase.addEventListener('click', () => {
@@ -235,6 +235,7 @@ tracks.addEventListener('click', () => {
 
 function deleteCells() {
     const elements = document.getElementsByClassName('cells');
+    num = elements.length;
    while(elements.length > 0) {
     elements[0].parentNode.removeChild(elements[0]);
    }
