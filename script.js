@@ -32,67 +32,96 @@ function baseCells(num) {
             cells.style.height = '13px';
             container.append(cells);
             cells.addEventListener('mousemove', () => { 
-                if(isDrawing && erase.classList.contains('clicked')){cells.style.background = "#d8d8d8";}
-                else if (isDrawing) {
-                cells.style.background = "black";
+                if(isDrawing && erase.classList.contains('clicked')){
+                        cells.style.background = "#d8d8d8";
                     }
+                else if (isDrawing) {
+                    cells.classList.add('colored');
+                //cells.style.backgroundColor = "black";
+                    }
+                reset.addEventListener('click', () => {
+                        cells.classList.remove('colored');
+                        cells.classList.add('fade');
+                    });
                 })}  
     }
     
     if(num == 1024) {
         deleteCells();
-    for(let i = 1; i <= num; i++) {
-        tracks.addEventListener('click', () => {
-            cells.classList.toggle('outlineClicked');
-        })
+        for(let i = 1; i <= num; i++) {
+            tracks.addEventListener('click', () => {
+                cells.classList.toggle('outlineClicked');
+            })
         const cells = document.createElement('div');
         cells.classList.add('cells');
         cells.style.width = '28px';
         cells.style.height = '28px';
         container.append(cells);
         cells.addEventListener('mousemove', () => { 
-            if(isDrawing && erase.classList.contains('clicked')){cells.style.background = "#d8d8d8";}
+            if(isDrawing && erase.classList.contains('clicked')){
+                    cells.style.background = "#d8d8d8";
+                }
             else if (isDrawing) {
-                cells.style.background = "black";
-            }
-        })}  
+                cells.classList.add('colored');
+                //cells.style.backgroundColor = "black";
+                }
+            reset.addEventListener('click', () => {
+                cells.classList.remove('colored');
+                cells.classList.add('fade');
+                });
+            })}  
     }
     
    
     if(num == 256) {
         deleteCells();
-    for(let i = 1; i <= num; i++) {
-        tracks.addEventListener('click', () => {
-            cells.classList.toggle('outlineClicked');
-        })
+        for(let i = 1; i <= num; i++) {
+            tracks.addEventListener('click', () => {
+                cells.classList.toggle('outlineClicked');
+            })
         const cells = document.createElement('div');
         cells.classList.add('cells');
         container.append(cells);
         cells.addEventListener('mousemove', () => { 
             if(isDrawing){
-                if(isDrawing && erase.classList.contains('clicked')){cells.style.background = "#d8d8d8";}
+                if(isDrawing && erase.classList.contains('clicked')){
+                    cells.style.background = "#d8d8d8";
+                        }
                 else if (isDrawing) {
-                    cells.style.background = "black";}
+                    cells.classList.add('colored');
+                    //cells.style.backgroundColor = "black";
                 }
+                }
+                reset.addEventListener('click', () => {
+                    cells.classList.remove('colored');
+                    cells.classList.add('fade');
+                });
         })}  
     }
 
     else if(num == 64) {
         deleteCells();
-    for(let i = 1; i <= num; i++) {
-        tracks.addEventListener('click', () => {
-            cells.classList.toggle('outlineClicked');
-        })
+        for(let i = 1; i <= num; i++) {
+            tracks.addEventListener('click', () => {
+                cells.classList.toggle('outlineClicked');
+            });
         const cells = document.createElement('div');
         cells.classList.add('cells');
         cells.style.width = '118px';
         cells.style.height = '118px';
         container.append(cells);
         cells.addEventListener('mousemove', () => {
-            if(isDrawing && erase.classList.contains('clicked')){cells.style.background = "#d8d8d8";}
+            if(isDrawing && erase.classList.contains('clicked')){
+                    cells.style.background = "#d8d8d8";
+                }
             else if (isDrawing) {
-                cells.style.background = "black";
-            }
+                cells.classList.add('colored');
+                //cells.style.backgroundColor = "black";
+                }
+            reset.addEventListener('click', () => {
+                cells.classList.remove('colored');
+                cells.classList.add('fade');
+            });
     });
 }
 }
@@ -101,18 +130,25 @@ else if(num == 16) {
     for(let i = 1; i <= num; i++) {
         tracks.addEventListener('click', () => {
             cells.classList.toggle('outlineClicked');
-        })
+        });
         const cells = document.createElement('div');
         cells.classList.add('cells');
         cells.style.width = '238px';
         cells.style.height = '238px';
         container.append(cells);
         cells.addEventListener('mousemove', () => {
-        if(isDrawing){
-            if(isDrawing && erase.classList.contains('clicked')){cells.style.background = "#d8d8d8";}
+            if(isDrawing && erase.classList.contains('clicked')){
+                    cells.style.background = "#d8d8d8";
+                }
             else if (isDrawing) {
-                cells.style.background = "black";}
+                cells.classList.add('colored');
+                //cells.style.backgroundColor = "black";
             }
+            
+            reset.addEventListener('click', () => {
+                cells.classList.remove('colored');
+                cells.classList.add('fade');
+            })
     })
 }}
 
@@ -180,9 +216,14 @@ reset.addEventListener('click', () => {
     largest.classList.remove('clicked');
     small.classList.remove('clicked');
     tracks.classList.add('clicked');
-    deleteCells();
-    baseCells(64);
-    
+    container.classList.add('shake');
+    setTimeout(function() {
+        container.classList.remove('shake');
+    }, 1000);
+    setTimeout(function() {
+        deleteCells() 
+        baseCells(64)
+    }, 1000);
 });
 erase.addEventListener('click', () => {
     erase.classList.toggle('clicked');

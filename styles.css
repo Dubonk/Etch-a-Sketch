@@ -28,7 +28,7 @@ body {
 
 #container {
     background-color: #d8d8d8;
-    border: 42px solid #cc0000;
+    border: 50px solid #cc0000;
     border-radius: 8px;
     display: flex;
     flex-wrap: wrap;
@@ -115,6 +115,10 @@ button:active {
   background-color: #35927c;
 }
 
+#reset:hover {
+  animation: shaking 1s;
+}
+
 a {
   color: #d8d8d8;
   text-decoration: none;
@@ -122,4 +126,34 @@ a {
 
 .clicked {
   color: rgb(13, 229, 13);
+}
+
+.shake {
+  animation: shaking 1s;
+}
+
+.fade {
+    transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -webkit-transition: background-color 1s;
+    -o-transition: background-color 1s;
+    background-color: #d8d8d8;
+}
+
+.colored {
+  background-color: black;
+}
+
+@keyframes shaking {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
