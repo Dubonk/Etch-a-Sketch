@@ -9,7 +9,6 @@ const tracks = document.querySelector('#tracks');
 const cells = document.createElement('div');
 const erase = document.querySelector('#erase');
 let isDrawing = false;
-tracks.classList.add('clicked');
 
 window.addEventListener("mousedown", () => {
     isDrawing = true;
@@ -37,7 +36,6 @@ function baseCells(num) {
                     }
                 else if (isDrawing) {
                     cells.classList.add('colored');
-                //cells.style.backgroundColor = "black";
                     }
                 reset.addEventListener('click', () => {
                         cells.classList.remove('colored');
@@ -63,7 +61,6 @@ function baseCells(num) {
                 }
             else if (isDrawing) {
                 cells.classList.add('colored');
-                //cells.style.backgroundColor = "black";
                 }
             reset.addEventListener('click', () => {
                 cells.classList.remove('colored');
@@ -89,7 +86,6 @@ function baseCells(num) {
                         }
                 else if (isDrawing) {
                     cells.classList.add('colored');
-                    //cells.style.backgroundColor = "black";
                 }
                 }
                 reset.addEventListener('click', () => {
@@ -116,7 +112,6 @@ function baseCells(num) {
                 }
             else if (isDrawing) {
                 cells.classList.add('colored');
-                //cells.style.backgroundColor = "black";
                 }
             reset.addEventListener('click', () => {
                 cells.classList.remove('colored');
@@ -142,7 +137,6 @@ else if(num == 16) {
                 }
             else if (isDrawing) {
                 cells.classList.add('colored');
-                //cells.style.backgroundColor = "black";
             }
             
             reset.addEventListener('click', () => {
@@ -160,7 +154,7 @@ small.addEventListener('click', () => {
     large.classList.remove('clicked');
     largest.classList.remove('clicked');
     small.classList.add('clicked');
-    tracks.classList.add('clicked');
+    tracks.classList.remove('clicked');
     deleteCells();
     baseCells(16);
     
@@ -171,7 +165,7 @@ eight.addEventListener('click', () => {
     large.classList.remove('clicked');
     largest.classList.remove('clicked');
     small.classList.remove('clicked');
-    tracks.classList.add('clicked');
+    tracks.classList.remove('clicked');
     deleteCells();
     baseCells(64);
     
@@ -182,7 +176,7 @@ sixteen.addEventListener('click', () => {
     large.classList.remove('clicked');
     largest.classList.remove('clicked');
     small.classList.remove('clicked');
-    tracks.classList.add('clicked');
+    tracks.classList.remove('clicked');
     deleteCells();
     baseCells(256);
     
@@ -193,7 +187,7 @@ large.addEventListener('click', () => {
     large.classList.add('clicked');
     largest.classList.remove('clicked');
     small.classList.remove('clicked');
-    tracks.classList.add('clicked');
+    tracks.classList.remove('clicked');
     deleteCells();
     baseCells(1024);
     
@@ -204,18 +198,13 @@ largest.addEventListener('click', () => {
     large.classList.remove('clicked');
     largest.classList.add('clicked');
     small.classList.remove('clicked');
-    tracks.classList.add('clicked');
+    tracks.classList.remove('clicked');
     deleteCells();
     baseCells(4096);
     
 });
 reset.addEventListener('click', () => {
-    // eight.classList.add('clicked');
-    // sixteen.classList.remove('clicked');
-    // large.classList.remove('clicked');
-    // largest.classList.remove('clicked');
-    // small.classList.remove('clicked');
-    tracks.classList.add('clicked');
+    tracks.classList.remove('clicked');
     container.classList.add('shake');
     setTimeout(function() {
         container.classList.remove('shake');
@@ -241,6 +230,5 @@ function deleteCells() {
    }
 };
 
-baseCells(64);
-eight.classList.add('clicked');
-
+baseCells(1024);
+large.classList.add('clicked');

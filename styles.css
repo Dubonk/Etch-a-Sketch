@@ -43,7 +43,12 @@ body {
     height: 58px;
     width: 58px;
     user-select: none;
-    border: 1px solid rgb(135, 135, 135);
+    border: transparent 1px solid;
+    /*border: 1px solid rgb(135, 135, 135);*/
+}
+
+.cells:hover {
+  background-color: grey;
 }
 
 .filled {
@@ -101,7 +106,8 @@ button:active {
   transform: translateY(2px);
 }
 .outlineClicked {
- border: transparent 1px solid;
+  border: 1px solid rgb(135, 135, 135)
+ /*border: transparent 1px solid;*/
 }
 
 #footer {
