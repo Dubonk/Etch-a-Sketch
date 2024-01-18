@@ -54,8 +54,8 @@ function baseCells(num) {
             })
         const cells = document.createElement('div');
         cells.classList.add('cells');
-        cells.style.width = '28px';
-        cells.style.height = '28px';
+        // cells.style.width = '28px';
+        // cells.style.height = '28px';
         container.append(cells);
         cells.addEventListener('mousemove', () => { 
             if(isDrawing && erase.classList.contains('clicked')){
@@ -83,6 +83,8 @@ function baseCells(num) {
         const cells = document.createElement('div');
         cells.classList.add('cells');
         container.append(cells);
+        cells.style.width = '58px';
+        cells.style.height = '58px';
         cells.addEventListener('mousemove', () => { 
             if(isDrawing){
                 if(isDrawing && erase.classList.contains('clicked')){
