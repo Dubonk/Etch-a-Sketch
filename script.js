@@ -15,6 +15,12 @@ window.addEventListener("mousedown", () => {
 });
 window.addEventListener("mouseup", () => {
     isDrawing = false;
+});
+window.addEventListener("touchstart", () => {
+    isDrawing = true;
+});
+window.addEventListener("touchend", () => {
+    isDrawing = false;
 })
 
 
@@ -57,6 +63,20 @@ function baseCells(num) {
         // cells.style.width = '28px';
         // cells.style.height = '28px';
         container.append(cells);
+        cells.addEventListener('touchmove', () => { 
+            if(isDrawing && erase.classList.contains('clicked')){
+                    cells.style.background = "#d8d8d8";
+                }
+            else if (isDrawing) {
+                cells.style.background = 'black';
+                cells.classList.add('colored');
+                }
+            reset.addEventListener('click', () => {
+                cells.classList.remove('colored');
+                cells.classList.add('fade');
+                cells.style.background = '#d8d8d8';
+                });
+            })
         cells.addEventListener('mousemove', () => { 
             if(isDrawing && erase.classList.contains('clicked')){
                     cells.style.background = "#d8d8d8";
