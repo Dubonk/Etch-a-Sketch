@@ -4,16 +4,17 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: #336857;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    gap: 50px;
 }
 
 .title {
-  position: fixed;
-  top: 0;
+  /* position: fixed;
+  top: 0; */
   width: 100%;
   color: #d8d8d8;
   background-color: #35927c;
@@ -109,8 +110,6 @@ button:active {
 }
 
 #footer {
-  position: fixed;
-  bottom: 0;
   width: 100%;
   text-align: center;
   color: #d8d8d8;
